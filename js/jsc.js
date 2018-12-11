@@ -1,10 +1,20 @@
 $(document).ready(() => {
 
+function soundCan() {
+  $('#canSound').each(function() {
+    this.play();
+    this.currentTime = 0;
+  });
+  $('#canSound').attr('src', 'music/can.mp3');
+
+}
+
+
 
 let gif = $('img').first();
 
 $('.startGif').on('click', function(){
-  $('audio').attr('src', 'music/can.mp3');
+  soundCan();
   let g = gif.attr('src');
   gif.attr('src', g);
 });
@@ -78,36 +88,43 @@ function myinhaleFunction() {
   }
 }
 
+function play() {
 
 $('audio').each(function() {
   this.pause();
   this.currentTime = 0;
 });
-
+}
 
 $('#weightless').click(function () {
      $('audio').attr('src', 'music/weightless.mp3');
+     play();
       });
 
 $('#airstream').click(function () {
     $('audio').attr('src', 'music/airstream.mp3');
+     play();
     });
 
 $('#oceanwaves').click(function () {
     $('audio').attr('src', 'music/oceanwaves.mp3');
+    play();
    });
 
 $('#rain').click(function () {
     $('audio').attr('src', 'music/rain.mp3');
+    play();
     });
 
 
 $('#nature').click(function () {
     $('audio').attr('src', 'music/nature.mp3');
+    play();
     });
 
 $('#birds').click(function () {
     $('audio').attr('src', 'music/birds.mp3');
+    play();
     });
 
 $('.albumCover').click(function() {
